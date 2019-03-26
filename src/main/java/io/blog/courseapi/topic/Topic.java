@@ -1,10 +1,14 @@
 package io.blog.courseapi.topic;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  *  Topico do curso
  */
+@Entity
 public class Topic {
-
+    @Id
     private String id;
     private String name;
     private String description;

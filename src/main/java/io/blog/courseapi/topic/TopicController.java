@@ -1,8 +1,7 @@
 package io.blog.courseapi.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,9 +16,23 @@ public class TopicController {
         return topicService.GetAll();
     }
 
-    /*@RequestMapping(value = "topicq/{id}", method=GET)
-    public Topic Get(@RequestParam(value="id") string id){
-
+    @RequestMapping("/topics/{id}")
+    public Topic Get(@PathVariable String id){
+        return topicService.Get(id);
     }
-    */
+
+    @RequestMapping(method = RequestMethod.POST, value = "/topics")
+    public void Add(@RequestBody Topic topic){
+        topicService.add(topic);
+    }
+
+    @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
+    public void Update(@RequestBody Topic topic, @PathVariable int id) {
+        topicService.Update(topic);
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+    public void Delete(@PathVariable String id){
+        topicService.Delete(id);
+    }
 }
