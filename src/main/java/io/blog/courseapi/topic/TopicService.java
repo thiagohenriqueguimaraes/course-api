@@ -25,22 +25,16 @@ public class TopicService {
 
     public Topic Get(String id) {
         return topicRepository.findById(id).get();
-        /*Topic topic = topics.stream()
-                .filter(t -> t.getId().equals(id))
-                .findFirst()
-                .get();
-        return topic;
-        */
     }
 
     public Topic GetOld(String id) {
 
-        Topic topic = topicsOld.stream()
+        Topic topic = topicsOld
+                .stream()
                 .filter(t -> t.getId().equals(id))
                 .findFirst()
                 .get();
         return topic;
-
     }
 
     public void add(Topic topic) {
