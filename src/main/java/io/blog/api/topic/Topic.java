@@ -1,4 +1,4 @@
-package io.blog.courseapi.topic;
+package io.blog.api.topic;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,14 +17,14 @@ public class Topic {
 
     }
 
-    public Topic(String id, String name, String description) {
+    Topic(String id, String name, String description) {
         super();
         this.id = id;
         this.name = name;
         this.description = description;
     }
 
-    public String getId() {
+    String getId() {
         return id;
     }
 

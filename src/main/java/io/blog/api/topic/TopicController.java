@@ -1,4 +1,4 @@
-package io.blog.courseapi.topic;
+package io.blog.api.topic;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -8,8 +8,12 @@ import java.util.List;
 @RestController
 public class TopicController {
 
+    private final TopicService topicService;
+
     @Autowired
-    private TopicService topicService;
+    public TopicController(TopicService topicService) {
+        this.topicService = topicService;
+    }
 
     @RequestMapping("/topics")
     public List<Topic> GetAll(){
@@ -27,7 +31,7 @@ public class TopicController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, value = "/topics/{id}")
-    public void Update(@RequestBody Topic topic, @PathVariable int id) {
+    public void Update(@RequestBody Topic topic, @PathVariable String id) {
         topicService.Update(topic);
     }
 

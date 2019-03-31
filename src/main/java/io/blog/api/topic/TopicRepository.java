@@ -1,4 +1,4 @@
-package io.blog.courseapi.topic;
+package io.blog.api.topic;
 
 import org.springframework.data.repository.CrudRepository;
 
