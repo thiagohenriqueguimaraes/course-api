@@ -1,0 +1,26 @@
+    <html xmlns:th="http://www.thymeleaf.or">
+    <body>
+    <form action="#" th:action="@{/form-topic}" th:object="${topic}" method="post">
+        <table>
+            <tr>
+                <td>Código:</td>
+                <td><input type="text" th:field="*{id}" /></td>
+                <td th:if="${#fields.hasErrors('id')}" th:errors="*{id}">Código errado</td>
+            </tr>
+            <tr>
+                <td>Nome:</td>
+                <td><input type="text" th:field="*{name}" /></td>
+                <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Nome errado</td>
+            </tr>
+            <tr>
+                <td>Descrição:</td>
+                <td><input type="text" th:field="*{description}" /></td>
+                <td th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Descrição errada</td>
+            </tr>
+            <tr>
+                <td><button type="submit">Salvar</button></td>
+            </tr>
+        </table>
+    </form>
+    </body>
+    </html>

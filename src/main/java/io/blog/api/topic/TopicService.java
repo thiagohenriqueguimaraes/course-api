@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class TopicService {
@@ -44,7 +43,7 @@ public class TopicService {
                 .orElse(null);
     }
 
-    void add(Topic topic) {
+    public void add(Topic topic) {
         topicRepository.save(topic);
 
     }
@@ -52,7 +51,7 @@ public class TopicService {
         topicsOld.add(topic);
     }
 
-    void Update(Topic topic)
+    public void Update(Topic topic)
     {
         topicRepository.save(topic);
     }
